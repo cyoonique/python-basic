@@ -1,0 +1,35 @@
+import os
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    pos = 0
+    neg = 0
+    zero = 0
+    totalp = []
+    totaln = []
+    totalz = []
+    for i in arr:
+        if i > 0:
+            pos += 1
+            totalp = pos / n
+
+        elif i < 0:
+            neg += 1
+            totaln = neg / n
+
+        else:
+            zero += 1
+            totalz = zero / n
+    print('%.6f'% totalp)
+    print('%.6f'% totaln)
+    print('%.6f'% totalz)
+
+      
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
