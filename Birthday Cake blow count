@@ -6,11 +6,16 @@ import sys
 
 # Complete the birthdayCakeCandles function below.
 def birthdayCakeCandles(ar):
+    tallest = 0
     count = 0
+    
     for i in ar:
-        if i == max(ar):
+        if i > tallest:
+            tallest = i
+            count = 1
+        elif i == tallest:
             count += 1
-    return count
+    return(count)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
