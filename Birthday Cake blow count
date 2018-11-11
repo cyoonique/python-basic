@@ -4,6 +4,14 @@ import random
 import re
 import sys
 
+'''keep a running max and update it if we
+find something larger, if we find something smaller
+we just keep looking and if we find something equal
+then we increment a counter variable'''
+
+#Time Complexity: O(n) //We must check the height of every candle
+#Space Complexity: O(1) //We only store a max and a frequency
+
 # Complete the birthdayCakeCandles function below.
 def birthdayCakeCandles(ar):
     tallest = 0
