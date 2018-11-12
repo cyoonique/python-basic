@@ -1,0 +1,26 @@
+import os
+import sys
+import math
+
+# Complete the solve function below.
+def solve(n):
+    # use triangular number formula 0, 1, 3, 6 and so on.
+    x = (math.sqrt(8*n+1)-1)/2
+    if x == int(x):
+        return "Go On Bob " + str(int(x))
+    else:
+        return "Better Luck Next Time"
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        n = int(input())
+
+        result = solve(n)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
