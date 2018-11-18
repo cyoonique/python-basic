@@ -7,7 +7,10 @@ import math
 #
 def getTotalX(a, b):
     nmax, mmin, count = max(a), min(b), 0
+    #Loops through the possibilites between nmax and nmin
     for i in range(1,int(mmin//nmax)+1):
+        #Finds whether chosen n is multiple of nmax by using modulus function
+        #Finds whether chosen n is a factor of bmin
         if (sum((i*nmax)%n for n in a)+ sum(n% (i* nmax) for n in b)) == 0:
             count += 1
     return(count)
