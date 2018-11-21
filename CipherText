@@ -1,0 +1,20 @@
+
+        input_shift = []
+        for i in self.message_text:
+            if i not in self.build_shift_dict(shift).full_key():
+                input_shift.append(i)
+                continue
+            else:
+                input_shift.append(self.build_shift_dict(shift)[i])
+        return ''.join(input_shift)
+
+        cipher = self.build_shift_dict(shift)
+        ciphertext = ""
+         
+        for char in self.message_text:
+            if char in cipher:
+                ciphertext = ciphertext + cipher[char]
+            else:
+                ciphertext = ciphertext + char
+                 
+        return ciphertext
