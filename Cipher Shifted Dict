@@ -1,0 +1,43 @@
+
+        lc_str = string.ascii_lowercase
+        uc_str = string.ascii_uppercase
+     
+        shifted_dict = {}
+ 
+        for ltr in lc_str:
+            if lc_str.index(ltr) + shift < 26:
+                shifted_dict[ltr] = lc_str[lc_str.index(ltr) + shift]
+            else:
+                shifted_dict[ltr] = lc_str[lc_str.index(ltr)-26+shift]
+     
+        for ltr in uc_str:
+            if uc_str.index(ltr) + shift < 26:
+                shifted_dict[ltr] = uc_str[uc_str.index(ltr) + shift]
+            else:
+                shifted_dict[ltr] = uc_str[uc_str.index(ltr)-26+shift]
+             
+        return shifted_dict
+ 
+ 
+        lower = string.ascii.lowercase
+        upper = string.ascii.uppercase
+        shift_dict = {}
+        
+        for letters in lower:
+        #lowercase key, value and shifted value
+        lower_key = list(string.ascii_lowercase)
+        lower_value = list(string.ascii_lowercase)
+        lowshift_value = lower_value [shift:] + lower_value [:shift]
+
+        #uppercase key, value and shifted value
+        upper_key = list(string.ascii_uppercase)
+        upper_value = list(string.ascii_uppercase)
+        uppershift_value = upper_value [shift:] + upper_value [:shift]
+        
+        #combined key, value
+        full_key = lower_key + upper_key
+        full_value = lower_value + upper_value
+        
+        #cipher dictionary used to apply a cipher to a letter
+        self.shift_dict = dict(zip(full_key, full_value))
+        return self.shift_dict
