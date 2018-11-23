@@ -1,0 +1,33 @@
+import math
+import os
+import random
+import re
+import sys
+import collections
+
+# Complete the sockMerchant function below.
+def sockMerchant(n, ar):
+    mylist = []
+    # using formula from collections, counting duplicate numbers in the list and counting
+    for i in set(ar):
+        mylist.append(ar.count(i))
+    # once the list is updated with num of same values on the list, divide by 2 to count     as a pair
+    pair = 0
+    for i in mylist:
+        if i > 1:
+            i = i//2
+            pair += i
+    return(pair)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = sockMerchant(n, ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
