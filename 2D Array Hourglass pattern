@@ -1,0 +1,46 @@
+#Given a  2D Array:
+1 1 1 0 0 0
+0 1 0 0 0 0
+1 1 1 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+
+# define an hourglass in  to be a subset of values with indices fallig in this pattern.
+a b c
+  d
+e f g
+
+#constraints
+-9 <= arr[i][j] <= 9
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the hourglassSum function below.
+def hourglassSum(arr):
+    maxsum = -64
+    for a in arr:
+        for i in range(4):
+            for j in range(4):
+                add = arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i+1][j+1]+arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2]
+                if add > maxsum:
+                    maxsum = add
+    return(maxsum)
+ 
+ if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = hourglassSum(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
