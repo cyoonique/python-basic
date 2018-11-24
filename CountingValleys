@@ -1,0 +1,21 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countingValleys function below.
+def countingValleys(n, s):
+    valley = 0
+    sealevel = 0
+    for i in s:
+        if i == 'U':
+            sealevel += 1
+        elif i == 'D':
+            sealevel -= 1
+            
+       # counting how many occurences of above sealevel to count valleys
+        if sealevel == 0 and i =='U':
+            valley += 1
+    return(valley)
+    
