@@ -1,3 +1,4 @@
+# pattern 00:00:00AM = HR:MN:SCPM
 
 def convertTimeToMilitaryTime(s):
   if s[-2:] == 'PM' and s[:2] == '12':
@@ -7,4 +8,4 @@ def convertTimeToMilitaryTime(s):
   elif s[-2:] == 'AM':
       return s[:-2]
   else:
-      return str(int(s[:2])+12) + s[2:8]
+      return str(int(s[:2])+12) + s[2:-2]
