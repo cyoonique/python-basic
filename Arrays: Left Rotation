@@ -1,0 +1,42 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the rotLeft function below.
+def rotLeft(a, d):
+
+    # calculate actual shift amount (e.g., 11 --> 1 if length of the array is 5)
+    d %= len(a)
+
+    # shift array with list slicing
+    shifted_array = a[d:] + a[:d]
+
+    return shifted_array
+    
+    
+    newarr = ''
+    for i in range(n):
+        newarr += str(a[(i+n+d) % n])
+    return(newarr)
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nd = input().split()
+
+    n = int(nd[0])
+
+    d = int(nd[1])
+
+    a = list(map(int, input().rstrip().split()))
+
+    result = rotLeft(a, d)
+        
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
