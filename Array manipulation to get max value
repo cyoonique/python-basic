@@ -1,0 +1,45 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the arrayManipulation function below.
+def arrayManipulation(n, queries)
+    #Starting with a 1-indexed array of zeros and a list of operations
+    resarr = [0] * (n+1)
+    count = 0
+    maxnum = 0
+    
+    # the list of starting point to end point and the value that will be added
+    for a,b,k in queries:
+        resarr[a -1] += k
+        resarr[b] -= k
+        
+    for i in resarr:
+        count += i
+        # check max number from the updated array and swap max. 
+        if count > maxnum:
+            maxnum = count  
+    return maxnum
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    queries = []
+
+    for _ in range(m):
+        queries.append(list(map(int, input().rstrip().split())))
+
+    result = arrayManipulation(n, queries)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
